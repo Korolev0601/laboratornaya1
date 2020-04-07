@@ -1,28 +1,21 @@
-let money;
-let time;
-//let button = document.getElementById("button"); второй вариант
+let money = prompt("Ваш бюджет на месяц?", '');
+let time = prompt("Введите дату в формате YYYY-MM-DD", '');
+
 let expenses = {};
 let appData = {
-    money: money,
-    timeData: time,
-    expenses:{},
-    optionalExpenses: null,
-    income: [],
-    savings: false
+budzhet: money,
+timeData: time,
+expenses: {},
+optionalExpenses: null,
+income: [],
+savings: false
 };
-//button.onclick = function() второй вариант
-function Send() {
-    money = document.getElementById('money').value;
-    time = document.getElementById('time').value;
-    appData.money = money;
-    appData.timeData = time;
-    let AnswerOne = prompt("Введите обязательную статью расходов в этом месяце");
-    let AnswerTwo = prompt("Во сколько обойдется?");
-    appData.expenses[AnswerOne] = AnswerTwo;
-    alert("Ваш бюджет на 1 день: " + (appData.money - appData.expenses[AnswerOne])/30);
-    /*
-    for (let key in appData.expenses) {
-        alert( "Ключ: " + key + " значение: " + appData.expenses[key] );
-      }
-      */
-  };
+
+function questions(){
+let question1 = prompt("Введите обязательную статью расходов в этом месяце", '');
+let question2 = prompt("Во сколько обойдется?", '');
+    appData.expenses[question1] = question2;
+    alert("Ваш бюджет на 1 день: " + (appData.budzhet - appData.expenses[question1])/30);
+}
+questions();
+questions();
